@@ -38,7 +38,7 @@ export default function HeroSection() {
         onClick={toggleMute}
         aria-label={isMuted ? 'Ovozni yoqish' : "Ovozni o'chirish"}
         className="
-          absolute top-4 left-4 z-30
+          absolute bottom-4 left-4 z-30
           flex items-center gap-2
           bg-white/10 hover:bg-white/20
           backdrop-blur-sm
@@ -46,7 +46,7 @@ export default function HeroSection() {
           text-white text-sm font-medium
           px-3 py-2 rounded-full
           transition-all duration-300
-          sm:top-6 sm:left-6
+          sm:bottom-6 sm:left-6
         "
       >
         {isMuted ? (
@@ -62,10 +62,10 @@ export default function HeroSection() {
           <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
             SAN&apos;ATCORE
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300 mb-8">
+          <p className="text-xl md:text-2xl text-white/90 mb-8">
             Креативное агентство с упором на видеопродакшн.
           </p>
-          <p className="text-lg text-gray-400 mb-12 leading-relaxed">
+          <p className="text-lg text-white/70 mb-12 leading-relaxed">
             Мы создаем визуальные истории, которые формируют восприятие брендов, людей и идей.
           </p>
 
@@ -77,7 +77,7 @@ export default function HeroSection() {
               Посмотреть проекты
               <FiArrowRight />
             </Link>
-            <button className="btn-secondary inline-flex items-center gap-2 justify-center">
+            <button className="inline-block px-6 py-3 bg-transparent border-2 border-white text-white rounded-lg font-semibold transition-colors hover:bg-black hover:text-white">
               Оставить заявку
             </button>
           </div>
