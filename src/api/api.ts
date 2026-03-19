@@ -12,21 +12,24 @@ type FormData = {
 export const sendOrder = async (form: FormData) => {
 
   const text = `
-Имя: ${form.name}
-Компания: ${form.company}
+<b>Новая заявка с сайта San'atcore</b>
 
-Email: ${form.email}
-Телефон: ${form.phone}
+<b>Имя:</b> ${form.name}
+<b>Компания:</b> ${form.company || 'Не указана'}
+<b>Email:</b> ${form.email}
+<b>Телефон:</b> ${form.phone || 'Не указан'}
+<b>Telegram:</b> ${form.telegram || 'Не указан'}
 
-Telegram: ${form.telegram}
-Сообщение: ${form.message}
-  `
+<b>Сообщение:</b>
+${form.message}
+  `.trim();
 
   try {
-    const { data } = await axios.post("/api/submit", {text});
+    const { data } = await axios.post("/api/send-order", { text });
     return data;
   } catch (error) {
-    console.log(error);
+    console.error('Error sending order:', error);
+    return { success: false, error: 'Failed to send order' };
   }
 };
 
