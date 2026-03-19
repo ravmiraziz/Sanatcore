@@ -5,17 +5,17 @@ export async function POST(request: Request) {
   try {
     const { text } = await request.json();
 
-    const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
-    const CHAT_ID = process.env.TELEGRAM_CHAT_ID;
+    const BOT_TOKEN = process.env.BOT_TOKEN;
+    const CHAT_ID = process.env.CHAT_ID;
 
+    // Check for missing variables
     if (!BOT_TOKEN || !CHAT_ID) {
-      console.error('Missing Telegram configuration (TELEGRAM_BOT_TOKEN or TELEGRAM_CHAT_ID)');
       return NextResponse.json(
         { 
           success: false, 
-          error: 'Configuration Error: Missing TELEGRAM_BOT_TOKEN or TELEGRAM_CHAT_ID in .env file.' 
+          error: 'Configuration Error: BOT_TOKEN or CHAT_ID is missing in environment variables. Please add them to .env.local or Vercel settings.' 
         },
-        { status: 500 }
+        { status: 400 } // Use 400 to distinguish from a true server crash
       );
     }
 
@@ -30,16 +30,21 @@ export async function POST(request: Request) {
     if (response.data.ok) {
       return NextResponse.json({ success: true });
     } else {
-      console.error('Telegram API error:', response.data);
       return NextResponse.json(
-        { success: false, error: 'Telegram API error' },
-        { status: 502 }
+        { 
+          success: false, 
+          error: `Telegram Error: ${response.data.description}` 
+        },
+        { status: 400 }
       );
     }
-  } catch (error) {
-    console.error('Error in send-order API route:', error);
+  } catch (error: any) {
+    console.error('API Error:', error.message);
     return NextResponse.json(
-      { success: false, error: 'Internal Server Error' },
+      { 
+        success: false, 
+        error: 'An unexpected error occurred. Please check server logs.' 
+      },
       { status: 500 }
     );
   }

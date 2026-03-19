@@ -16,6 +16,7 @@ export default function ContactFormSection() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -36,7 +37,8 @@ export default function ContactFormSection() {
 
       if (!res || !res.success) {
         setSubmitStatus('error');
-        throw new Error('Failed to send order');
+        setErrorMessage(res?.error || 'Failed to send order. Please try again later.');
+        throw new Error(res?.error || 'Failed to send order');
       }
       
       setSubmitStatus('success');
@@ -50,9 +52,12 @@ export default function ContactFormSection() {
       });
 
       setTimeout(() => setSubmitStatus('idle'), 5000);
-    } catch (error) {
+    } catch (error: any) {
       setSubmitStatus('error');
-      setTimeout(() => setSubmitStatus('idle'), 5000);
+      if (!errorMessage) {
+        setErrorMessage(error.message || 'An unexpected error occurred.');
+      }
+      setTimeout(() => setSubmitStatus('idle'), 8000);
     } finally {
       setIsSubmitting(false);
     }
@@ -180,7 +185,8 @@ export default function ContactFormSection() {
 
             {submitStatus === 'error' && (
               <div className="p-4 bg-red-50 border border-red-200 rounded-lg text-red-800">
-                Произошла ошибка при отправке заявки. Пожалуйста, попробуйте еще раз.
+                <p className="font-bold mb-1">Произошла ошибка при отправке заявки:</p>
+                <p className="text-sm">{errorMessage}</p>
               </div>
             )}
 
