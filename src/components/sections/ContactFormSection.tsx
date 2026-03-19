@@ -1,5 +1,7 @@
 'use client';
 
+import { sendOrder } from '@/api/api';
+import axios from 'axios';
 import { useState } from 'react';
 
 export default function ContactFormSection() {
@@ -28,12 +30,15 @@ export default function ContactFormSection() {
     setIsSubmitting(true);
 
     try {
-      // TODO: Connect to Strapi API
       console.log('Form data:', formData);
+      const res = await sendOrder(formData);
+      console.log(res);
 
-      // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-
+      if (!res || !res.success) {
+        setSubmitStatus('error');
+        throw new Error('Failed to send order');
+      }
+      
       setSubmitStatus('success');
       setFormData({
         name: '',
