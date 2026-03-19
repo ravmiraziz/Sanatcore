@@ -77,9 +77,12 @@ export default function HeroSection() {
               Посмотреть проекты
               <FiArrowRight />
             </Link>
-            <button className="inline-block px-6 py-3 bg-transparent border-2 border-white text-white rounded-lg font-semibold transition-colors hover:bg-black hover:text-white">
+            <Link
+              href="/#contact-form"
+              className="inline-block px-6 py-3 bg-transparent border-2 border-white text-white rounded-lg font-semibold transition-colors hover:bg-black hover:text-white"
+            >
               Оставить заявку
-            </button>
+            </Link>
           </div>
         </div>
       </div>

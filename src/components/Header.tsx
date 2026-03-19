@@ -73,7 +73,9 @@ export default function Header() {
           >
             +7 (999) 999-99-99
           </a>
-          <button className="btn-primary text-sm">Оставить заявку</button>
+          <Link href="/#contact-form" className="btn-primary text-sm">
+            Оставить заявку
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -120,9 +122,13 @@ export default function Header() {
             >
               +7 (999) 999-99-99
             </a>
-            <button className="btn-primary text-sm w-full">
+            <Link
+              href="/#contact-form"
+              className="btn-primary text-sm w-full"
+              onClick={() => setIsOpen(false)}
+            >
               Оставить заявку
-            </button>
+            </Link>
           </div>
         </div>
       )}

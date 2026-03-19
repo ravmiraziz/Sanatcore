@@ -59,7 +59,7 @@ export default function ContactFormSection() {
   };
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section id="contact-form" className="py-20 bg-gray-50">
       <div className="container-custom">
         <div className="max-w-2xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center">

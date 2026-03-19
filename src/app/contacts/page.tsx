@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { FiMail, FiPhone } from 'react-icons/fi';
@@ -116,9 +117,9 @@ export default function Contacts() {
                 <p className="text-gray-600 mb-6">
                   Заполните форму ниже и мы свяжемся с вами как можно скорее.
                 </p>
-                <button className="btn-primary w-full">
+                <Link href="/#contact-form" className="btn-primary w-full">
                   Открыть форму заявки
-                </button>
+                </Link>
               </div>
             </div>
           </div>
