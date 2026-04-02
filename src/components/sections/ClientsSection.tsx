@@ -88,7 +88,7 @@ export default function ClientsSection() {
       image: '/partners/21.png',
     },
     {
-      color: 'bg-gray-400',
+      color: 'bg-white',
       image: '/partners/22.png',
     },
     {
@@ -104,7 +104,7 @@ export default function ClientsSection() {
       image: '/partners/25.png',
     },
     {
-      color: 'bg-gray-400',
+      color: 'bg-white',
       image: '/partners/26.png',
     },
     {
