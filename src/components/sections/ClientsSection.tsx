@@ -1,25 +1,116 @@
 export default function ClientsSection() {
-  const clients = ['Client 1', 'Client 2', 'Client 3', 'Client 4', 'Client 5', 'Client 6'];
+  const clients = [
+    {
+      color: 'bg-white',
+      image: '/partners/1.webp',
+    },
+    {
+      color: 'bg-white',
+      image: '/partners/2.webp',
+    },
+    {
+      color: 'bg-white',
+      image: '/partners/3.webp',
+    },
+    {
+      color: 'bg-white',
+      image: '/partners/4.webp',
+    },
+    {
+      color: 'bg-white',
+      image: '/partners/5.webp',
+    },
+    {
+      color: 'bg-white',
+      image: '/partners/6.webp',
+    },
+    {
+      color: 'bg-white',
+      image: '/partners/7.webp',
+    },
+    {
+      color: 'bg-white',
+      image: '/partners/8.webp',
+    },
+    {
+      color: 'bg-white',
+      image: '/partners/9.webp',
+    },
+    {
+      color: 'bg-white',
+      image: '/partners/10.webp',
+    },
+    {
+      color: 'bg-white',
+      image: '/partners/11.webp',
+    },
+    {
+      color: 'bg-white',
+      image: '/partners/12.webp',
+    },
+    {
+      color: 'bg-white',
+      image: '/partners/13.webp',
+    },
+    {
+      color: 'bg-white',
+      image: '/partners/14.webp',
+    },
+    {
+      color: 'bg-white',
+      image: '/partners/15.webp',
+    },
+    {
+      color: 'bg-white',
+      image: '/partners/16.webp',
+    },
+    {
+      color: 'bg-white',
+      image: '/partners/17.webp',
+    },
+    {
+      color: 'bg-white',
+      image: '/partners/18.webp',
+    },
+  ];
 
   const partners = [
-    '/partners/1.webp',
-    '/partners/2.webp',
-    '/partners/3.webp',
-    '/partners/4.webp',
-    '/partners/5.webp',
-    '/partners/6.webp',
-    '/partners/7.webp',
-    '/partners/8.webp',
-    '/partners/9.webp',
-    '/partners/10.webp',
-    '/partners/11.webp',
-    '/partners/12.webp',
-    '/partners/13.webp',
-    '/partners/14.webp',
-    '/partners/15.webp',
-    '/partners/16.webp',
-    '/partners/17.webp',
-    '/partners/18.webp',
+    {
+      color: 'bg-white',
+      image: '/partners/19.png',
+    },
+    {
+      color: 'bg-white',
+      image: '/partners/1.webp',
+    },
+    {
+      color: 'bg-white',
+      image: '/partners/21.png',
+    },
+    {
+      color: 'bg-gray-400',
+      image: '/partners/22.png',
+    },
+    {
+      color: 'bg-white',
+      image: '/partners/23.png',
+    },
+    {
+      color: 'bg-white',
+      image: '/partners/24.png',
+    },
+    {
+      color: 'bg-white',
+      image: '/partners/25.png',
+    },
+    {
+      color: 'bg-gray-400',
+      image: '/partners/26.png',
+    },
+    {
+      color: 'bg-white',
+      image: '/partners/20.png',
+    },
   ];
 
   return (
@@ -32,11 +123,11 @@ export default function ClientsSection() {
             {clients.map((client, index) => (
               <div
                 key={index}
-                className="flex items-center justify-center bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow"
+                className={`flex items-center justify-center ${client.color} p-3 rounded-lg shadow-sm hover:shadow-md transition-shadow`}
               >
-                <div className="text-gray-400 text-center font-semibold">
-                  <div className="w-24 h-24 bg-gray-200 rounded flex items-center justify-center text-sm">
-                    {client}
+                <div className="text-center font-semibold">
+                  <div className="w-24 h-24 flex items-center justify-center">
+                    <img src={client.image} alt="clients" className="h-full object-contain" />
                   </div>
                 </div>
               </div>
@@ -51,11 +142,11 @@ export default function ClientsSection() {
             {partners.map((partner, index) => (
               <div
                 key={index}
-                className="flex items-center justify-center bg-white p-3 rounded-lg shadow-sm hover:shadow-md transition-shadow"
+                className={`flex items-center justify-center ${partner.color} p-3 rounded-lg shadow-sm hover:shadow-md transition-shadow`}
               >
-                <div className="text-gray-400 text-center font-semibold">
-                  <div className="w-24 h-24 rounded flex items-center justify-center text-sm">
-                    <img src={partner} alt="partners" />
+                <div className="text-center font-semibold">
+                  <div className="w-24 h-24 flex items-center justify-center">
+                    <img src={partner.image} alt="partners" className="h-full object-contain" />
                   </div>
                 </div>
               </div>
