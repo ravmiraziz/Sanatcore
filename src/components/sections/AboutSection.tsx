@@ -12,8 +12,17 @@ export default function AboutSection() {
             {/* Who We Are */}
             <div>
               <h3 className="text-2xl font-bold mb-4 text-black">Кто мы</h3>
-              <p className="text-gray-700 text-lg leading-relaxed">
-                Мы - продюсерская команда, которая создает визуальные проекты на стыке рекламы, культуры и общественных смыслов.
+              <p className="text-gray-700 text-lg leading-relaxed mb-4">
+                San&apos;atcore - это креативное агентство с упором на видеопродакшн.
+              </p>
+              <p className="text-gray-700 text-lg leading-relaxed mb-4">
+                Мы - продюсерская команда, которая создает мультимедиа контент любого формата и под любой запрос. Мы раскроем ваш бренд с любой стороны.
+              </p>
+              <p className="text-gray-700 text-lg leading-relaxed mb-4">
+                Мы любим превращать сложные задачи в простой, понятный и запоминающийся для зрителя визуальный продукт.
+              </p>
+              <p className="text-gray-700 text-lg font-semibold">
+                Мы на рынке более 12 лет
               </p>
             </div>
 

@@ -1,25 +1,10 @@
 import Link from 'next/link';
 import { FiArrowRight } from 'react-icons/fi';
 
-interface Service {
-  title: string;
-  slug: string;
-}
+import { servicesData } from '@/lib/data';
 
 export default function ServicesSection() {
-  const services: Service[] = [
-    { title: 'Рекламные ролики', slug: 'advertising' },
-    { title: 'Контент для социальных сетей', slug: 'social-content' },
-    { title: 'Продюсирование экспертов', slug: 'expert-production' },
-    { title: 'Брендинг и ребрендинг', slug: 'branding' },
-    { title: 'Организация и съемка мероприятий', slug: 'events' },
-    { title: 'Социальные кампании', slug: 'social-campaigns' },
-    { title: 'Документальные проекты', slug: 'documentary' },
-    { title: 'Музыкальные клипы', slug: 'music-videos' },
-    { title: 'Имиджевые фильмы', slug: 'image-films' },
-    { title: 'Фильмы и сериалы', slug: 'films-series' },
-    { title: 'Вертикальные сериалы', slug: 'vertical-series' },
-  ];
+  const services = servicesData;
 
   return (
     <section className="py-20 bg-gray-50">

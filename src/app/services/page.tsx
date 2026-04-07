@@ -3,76 +3,15 @@ import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { FiArrowRight } from 'react-icons/fi';
+import { servicesData } from '@/lib/data';
 
 export const metadata: Metadata = {
   title: 'Услуги | San\'atcore',
   description: 'Полный спектр услуг креативного агентства San\'atcore: видеопродакшн, реклама, брендинг и многое другое.',
 };
 
-interface Service {
-  title: string;
-  slug: string;
-  description: string;
-}
-
 export default function Services() {
-  const services: Service[] = [
-    {
-      title: 'Рекламные ролики',
-      slug: 'advertising',
-      description: 'Создание высокопрофессиональных рекламных видео для различных платформ.',
-    },
-    {
-      title: 'Контент для социальных сетей',
-      slug: 'social-content',
-      description: 'Короткие, яркие видео и посты специально оптимизированные для соцсетей.',
-    },
-    {
-      title: 'Продюсирование экспертов',
-      slug: 'expert-production',
-      description: 'Развитие личного бренда экспертов и публичных фигур.',
-    },
-    {
-      title: 'Брендинг и ребрендинг',
-      slug: 'branding',
-      description: 'Создание или переоформление визуальной идентичности бренда.',
-    },
-    {
-      title: 'Организация и съемка мероприятий',
-      slug: 'events',
-      description: 'Полное сопровождение событий: от концепции до финального видео.',
-    },
-    {
-      title: 'Социальные кампании',
-      slug: 'social-campaigns',
-      description: 'Креативные кампании для общественно значимых инициатив.',
-    },
-    {
-      title: 'Документальные проекты',
-      slug: 'documentary',
-      description: 'Глубокие, захватывающие документальные работы.',
-    },
-    {
-      title: 'Музыкальные клипы',
-      slug: 'music-videos',
-      description: 'Создание качественного видеоконтента для музыкантов.',
-    },
-    {
-      title: 'Имиджевые фильмы',
-      slug: 'image-films',
-      description: 'Корпоративные видео, презентующие компанию в лучшем свете.',
-    },
-    {
-      title: 'Фильмы и сериалы',
-      slug: 'films-series',
-      description: 'Полнометражные художественные проекты.',
-    },
-    {
-      title: 'Вертикальные сериалы',
-      slug: 'vertical-series',
-      description: 'Сериалы в формате 9:16 для мобильных платформ.',
-    },
-  ];
+  const services = servicesData;
 
   return (
     <main>
