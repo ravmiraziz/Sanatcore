@@ -24,7 +24,6 @@ export const sendOrder = async (form: FormData) => {
 <b>Сообщение:</b>
 ${form.message}
   `.trim();
-
   try {
     const { data } = await axios.post("/api/send-order", { text });
     return data;
