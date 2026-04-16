@@ -223,6 +223,10 @@ export const dictionaries = {
       ],
       collabP2: 'давайте обсудим.',
       collabP3: 'San\'atcore — визуальный язык, который работает со смыслом.'
+    },
+    newsPage: {
+      backToNews: '← Назад к новостям',
+      share: 'Поделиться статьей:',
     }
   },
   uz: {

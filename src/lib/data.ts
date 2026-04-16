@@ -191,6 +191,43 @@ export const servicesData = {
   en: enData
 };
 
+export interface NewsArticle {
+  id: string;
+  title: string;
+  date: string;
+  image: string;
+  slug: string;
+}
+
+const ruNews: NewsArticle[] = [
+  { id: '1', title: 'Статья первая', date: '17 марта 2024', image: 'https://via.placeholder.com/400x250?text=News+1', slug: 'news-1' },
+  { id: '2', title: 'Статья вторая', date: '15 марта 2024', image: 'https://via.placeholder.com/400x250?text=News+2', slug: 'news-2' },
+  { id: '3', title: 'Статья третья', date: '10 марта 2024', image: 'https://via.placeholder.com/400x250?text=News+3', slug: 'news-3' },
+];
+
+const uzNews: NewsArticle[] = [
+  { id: '1', title: 'Birinchi maqola', date: '17-mart 2024', image: 'https://via.placeholder.com/400x250?text=News+1', slug: 'news-1' },
+  { id: '2', title: 'Ikkinchi maqola', date: '15-mart 2024', image: 'https://via.placeholder.com/400x250?text=News+2', slug: 'news-2' },
+  { id: '3', title: 'Uchinchi maqola', date: '10-mart 2024', image: 'https://via.placeholder.com/400x250?text=News+3', slug: 'news-3' },
+];
+
+const enNews: NewsArticle[] = [
+  { id: '1', title: 'First article', date: 'March 17, 2024', image: 'https://via.placeholder.com/400x250?text=News+1', slug: 'news-1' },
+  { id: '2', title: 'Second article', date: 'March 15, 2024', image: 'https://via.placeholder.com/400x250?text=News+2', slug: 'news-2' },
+  { id: '3', title: 'Third article', date: 'March 10, 2024', image: 'https://via.placeholder.com/400x250?text=News+3', slug: 'news-3' },
+];
+
+export const newsData = {
+  ru: ruNews,
+  uz: uzNews,
+  en: enNews,
+};
+
+export function getNewsBySlug(slug: string, language: string = 'ru'): NewsArticle | undefined {
+  const langKey = language as 'ru' | 'uz' | 'en';
+  return (newsData[langKey] || newsData.ru).find(article => article.slug === slug);
+}
+
 export function getServiceBySlug(slug: string, language: string = 'ru'): ServiceData | undefined {
   const langKey = language as 'ru' | 'uz' | 'en';
   return (servicesData[langKey] || servicesData.ru).find(service => service.slug === slug);
