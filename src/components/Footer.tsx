@@ -1,8 +1,13 @@
+'use client';
+
 import Link from 'next/link';
 import { FiInstagram, FiYoutube, FiLinkedin, FiMail } from 'react-icons/fi';
 import { SiTelegram } from 'react-icons/si';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function Footer() {
+  const { t, isHydrated } = useLanguage();
+
   return (
     <footer className="bg-black text-white py-16">
       <div className="container-custom">
@@ -11,37 +16,37 @@ export default function Footer() {
           <div className="md:col-span-1">
             <h3 className="text-2xl font-bold mb-4">San&apos;atcore</h3>
             <p className="text-gray-400 text-sm">
-              Креативное агентство с упором на видеопродакшн. Мы создаём визуальные истории, которые формируют восприятие брендов.
+              {isHydrated ? t('footer.description') : 'Креативное агентство с упором на видеопродакшн. Мы создаём визуальные истории, которые формируют восприятие брендов.'}
             </p>
           </div>
 
           {/* Column 2: Navigation */}
           <div>
-            <h4 className="text-lg font-semibold mb-6">Навигация</h4>
+            <h4 className="text-lg font-semibold mb-6">{isHydrated ? t('footer.fastLinks') : 'Навигация'}</h4>
             <ul className="space-y-3 text-sm text-gray-400">
               <li>
                 <Link href="/about" className="hover:text-white transition-colors">
-                  О компании
+                  {isHydrated ? t('nav.about') : 'О компании'}
                 </Link>
               </li>
               <li>
                 <Link href="/services" className="hover:text-white transition-colors">
-                  Услуги
+                  {isHydrated ? t('nav.services') : 'Услуги'}
                 </Link>
               </li>
               <li>
                 <Link href="/projects" className="hover:text-white transition-colors">
-                  Проекты
+                  {isHydrated ? t('nav.projects') : 'Проекты'}
                 </Link>
               </li>
               <li>
                 <Link href="/news" className="hover:text-white transition-colors">
-                  Новости
+                  {isHydrated ? t('nav.news') : 'Новости'}
                 </Link>
               </li>
               <li>
                 <Link href="/contacts" className="hover:text-white transition-colors">
-                  Контакты
+                  {isHydrated ? t('nav.contacts') : 'Контакты'}
                 </Link>
               </li>
             </ul>
@@ -49,17 +54,20 @@ export default function Footer() {
 
           {/* Column 3: Contacts */}
           <div>
-            <h4 className="text-lg font-semibold mb-6">Контакты</h4>
+            <h4 className="text-lg font-semibold mb-6">{isHydrated ? t('footer.contacts') : 'Контакты'}</h4>
             <ul className="space-y-3 text-sm text-gray-400">
               <li>
-                <a href="mailto:info@sanatcore.ru" className="hover:text-white transition-colors flex items-center gap-2">
+                <a
+                  href="mailto:sanatcoreuz@gmail.com"
+                  className="hover:text-white transition-colors flex items-center gap-2"
+                >
                   <FiMail size={16} />
-                  info@sanatcore.ru
+                  sanatcoreuz@gmail.com
                 </a>
               </li>
               <li>
-                <a href="tel:+79999999999" className="hover:text-white transition-colors">
-                  +7 (999) 999-99-99
+                <a href="tel:+998909974888" className="hover:text-white transition-colors">
+                  +998 90 997 48 88
                 </a>
               </li>
             </ul>
@@ -70,7 +78,7 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-6">Социальные сети</h4>
             <div className="flex gap-4">
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/sanatcore/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"
@@ -79,7 +87,7 @@ export default function Footer() {
                 <FiInstagram size={20} />
               </a>
               <a
-                href="https://youtube.com"
+                href="https://www.youtube.com/@sanatcore"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"
@@ -88,7 +96,7 @@ export default function Footer() {
                 <FiYoutube size={20} />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/company/sanatcore/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"
@@ -97,7 +105,7 @@ export default function Footer() {
                 <FiLinkedin size={20} />
               </a>
               <a
-                href="https://t.me"
+                href="https://t.me/nsanatcore"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"
@@ -112,7 +120,7 @@ export default function Footer() {
         {/* Divider */}
         <div className="border-t border-gray-800 pt-8">
           <div className="text-sm text-gray-400 text-center">
-            <p>&copy; 2024 San&apos;atcore. Все права защищены.</p>
+            <p>{isHydrated ? t('footer.rights') : '© 2024 San\'atcore. Все права защищены.'}</p>
           </div>
         </div>
       </div>

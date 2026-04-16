@@ -4,10 +4,12 @@ import Link from 'next/link';
 import { FiArrowRight } from 'react-icons/fi';
 import { HiVolumeUp, HiVolumeOff } from 'react-icons/hi';
 import { useRef, useState } from 'react';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function HeroSection() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isMuted, setIsMuted] = useState(true);
+  const { t, isHydrated } = useLanguage();
 
   const toggleMute = () => {
     if (videoRef.current) {
@@ -36,7 +38,7 @@ export default function HeroSection() {
       {/* Mute / Unmute Button — top-left */}
       <button
         onClick={toggleMute}
-        aria-label={isMuted ? 'Ovozni yoqish' : "Ovozni o'chirish"}
+        aria-label={isMuted ? (isHydrated ? t('hero.unmute') : 'Включить звук') : (isHydrated ? t('hero.mute') : 'Выключить звук')}
         className="
           absolute bottom-4 left-4 z-30
           flex items-center gap-2
@@ -63,10 +65,10 @@ export default function HeroSection() {
             SAN&apos;ATCORE
           </h1>
           <p className="text-xl md:text-2xl text-white/90 mb-8">
-            Креативное агентство с упором на видеопродакшн.
+            {isHydrated ? t('hero.subtitle') : 'Креативное агентство с упором на видеопродакшн.'}
           </p>
           <p className="text-lg text-white/70 mb-12 leading-relaxed">
-            Мы создаем визуальные истории, которые формируют восприятие брендов, людей и идей.
+            {isHydrated ? t('hero.description') : 'Мы создаем визуальные истории, которые формируют восприятие брендов, людей и идей.'}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
@@ -74,14 +76,14 @@ export default function HeroSection() {
               href="/projects"
               className="btn-primary"
             >
-              Посмотреть проекты
+              {isHydrated ? t('hero.viewProjects') : 'Посмотреть проекты'}
               <FiArrowRight />
             </Link>
             <Link
               href="/#contact-form"
               className="flex items-center justify-center px-6 py-3 bg-transparent border-2 border-white text-white rounded-lg font-semibold transition-colors hover:bg-black hover:text-white"
             >
-              Оставить заявку
+              {isHydrated ? t('nav.leaveRequest') : 'Оставить заявку'}
             </Link>
           </div>
         </div>

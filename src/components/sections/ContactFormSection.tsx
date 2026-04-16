@@ -1,10 +1,12 @@
 'use client';
 
 import { sendOrder } from '@/api/api';
-import axios from 'axios';
 import { useState } from 'react';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function ContactFormSection() {
+  const { t, isHydrated } = useLanguage();
+
   const [formData, setFormData] = useState({
     name: '',
     company: '',
@@ -40,7 +42,7 @@ export default function ContactFormSection() {
         setErrorMessage(res?.error || 'Failed to send order. Please try again later.');
         throw new Error(res?.error || 'Failed to send order');
       }
-      
+
       setSubmitStatus('success');
       setFormData({
         name: '',
@@ -63,15 +65,15 @@ export default function ContactFormSection() {
     }
   };
 
+  if (!isHydrated) return <div className="py-20 bg-gray-50 min-h-screen"></div>;
+
   return (
     <section id="contact-form" className="py-20 bg-gray-50">
       <div className="container-custom">
         <div className="max-w-2xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center">
-            Оставить заявку
-          </h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center">{t('contact.title')}</h2>
           <p className="text-gray-600 text-center mb-12">
-            Расскажите нам о вашем проекте, и мы свяжемся с вами в ближайшее время.
+            {t('contact.subtitle')}
           </p>
 
           <form onSubmit={handleSubmit} className="space-y-6">
@@ -79,7 +81,7 @@ export default function ContactFormSection() {
               {/* Name */}
               <div>
                 <label htmlFor="name" className="block text-sm font-medium mb-2">
-                  Имя *
+                  {t('contact.name')}
                 </label>
                 <input
                   type="text"
@@ -89,14 +91,14 @@ export default function ContactFormSection() {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-black transition-colors"
-                  placeholder="Ваше имя"
+                  placeholder={t('contact.namePlaceholder')}
                 />
               </div>
 
               {/* Company */}
               <div>
                 <label htmlFor="company" className="block text-sm font-medium mb-2">
-                  Компания
+                  {t('contact.company')}
                 </label>
                 <input
                   type="text"
@@ -105,14 +107,14 @@ export default function ContactFormSection() {
                   value={formData.company}
                   onChange={handleChange}
                   className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-black transition-colors"
-                  placeholder="Название компании"
+                  placeholder={t('contact.companyPlaceholder')}
                 />
               </div>
 
               {/* Email */}
               <div>
                 <label htmlFor="email" className="block text-sm font-medium mb-2">
-                  Email *
+                  {t('contact.email')}
                 </label>
                 <input
                   type="email"
@@ -122,14 +124,14 @@ export default function ContactFormSection() {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-black transition-colors"
-                  placeholder="your@email.com"
+                  placeholder={t('contact.emailPlaceholder')}
                 />
               </div>
 
               {/* Phone */}
               <div>
                 <label htmlFor="phone" className="block text-sm font-medium mb-2">
-                  Телефон
+                  {t('contact.phone')}
                 </label>
                 <input
                   type="tel"
@@ -138,14 +140,14 @@ export default function ContactFormSection() {
                   value={formData.phone}
                   onChange={handleChange}
                   className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-black transition-colors"
-                  placeholder="+7 (999) 999-99-99"
+                  placeholder={t('contact.phonePlaceholder')}
                 />
               </div>
 
               {/* Telegram */}
               <div>
                 <label htmlFor="telegram" className="block text-sm font-medium mb-2">
-                  Телеграм
+                  {t('contact.telegram')}
                 </label>
                 <input
                   type="text"
@@ -154,7 +156,7 @@ export default function ContactFormSection() {
                   value={formData.telegram}
                   onChange={handleChange}
                   className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-black transition-colors"
-                  placeholder="@your_username"
+                  placeholder={t('contact.telegramPlaceholder')}
                 />
               </div>
             </div>
@@ -162,7 +164,7 @@ export default function ContactFormSection() {
             {/* Message */}
             <div>
               <label htmlFor="message" className="block text-sm font-medium mb-2">
-                Сообщение *
+                {t('contact.message')}
               </label>
               <textarea
                 id="message"
@@ -172,20 +174,20 @@ export default function ContactFormSection() {
                 required
                 rows={6}
                 className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-black transition-colors resize-none"
-                placeholder="Расскажите о вашем проекте..."
+                placeholder={t('contact.messagePlaceholder')}
               />
             </div>
 
             {/* Status Messages */}
             {submitStatus === 'success' && (
               <div className="p-4 bg-green-50 border border-green-200 rounded-lg text-green-800">
-                Спасибо! Ваша заявка отправлена. Мы свяжемся с вами в ближайшее время.
+                {t('contact.success')}
               </div>
             )}
 
             {submitStatus === 'error' && (
               <div className="p-4 bg-red-50 border border-red-200 rounded-lg text-red-800">
-                <p className="font-bold mb-1">Произошла ошибка при отправке заявки:</p>
+                <p className="font-bold mb-1">{t('contact.error')}</p>
                 <p className="text-sm">{errorMessage}</p>
               </div>
             )}
@@ -196,7 +198,7 @@ export default function ContactFormSection() {
               disabled={isSubmitting}
               className="w-full btn-primary py-3 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {isSubmitting ? 'Отправляется...' : 'Отправить заявку'}
+              {isSubmitting ? t('contact.submitting') : t('contact.submit')}
             </button>
           </form>
         </div>

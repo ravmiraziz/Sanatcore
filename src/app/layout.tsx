@@ -21,6 +21,9 @@ export const metadata: Metadata = {
   },
 };
 
+import { LanguageProvider } from "@/context/LanguageContext";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
+
 export default function RootLayout({
   children,
 }: {
@@ -29,7 +32,10 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <body className="antialiased">
-        {children}
+        <LanguageProvider>
+          {children}
+          <LanguageSwitcher />
+        </LanguageProvider>
       </body>
     </html>
   );

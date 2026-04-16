@@ -103,6 +103,7 @@ npm run start
 ### SEO оптимизация
 
 Каждая страница имеет:
+
 - `title` и `meta description`
 - `H1` заголовок
 - Правильную иерархию заголовков (H2, H3)
@@ -126,6 +127,7 @@ npm run start
 ### Структура данных Strapi
 
 #### Projects
+
 - `title` - Название проекта
 - `slug` - URL-friendly идентификатор
 - `description` - Описание
@@ -137,12 +139,14 @@ npm run start
 - `image` - Изображение обложки
 
 #### Services
+
 - `title` - Название услуги
 - `slug` - URL-friendly идентификатор
 - `description` - Краткое описание
 - `content` - Полное описание
 
 #### NewsArticles
+
 - `title` - Заголовок
 - `slug` - URL-friendly идентификатор
 - `content` - Полный текст статьи
@@ -175,6 +179,7 @@ strapiAPI.submitContactForm(data);
 Форма контакта находится в компоненте `ContactFormSection` и отправляет данные через API.
 
 Поля формы:
+
 - Имя (обязательно)
 - Компания
 - Email (обязательно)
@@ -217,6 +222,7 @@ NEXT_PUBLIC_META_PIXEL_ID=XXXXXXXXXXXX
 ## SEO Требования
 
 Все страницы включают:
+
 - Meta title и description
 - Open Graph теги
 - Robots.txt
@@ -235,6 +241,7 @@ NEXT_PUBLIC_META_PIXEL_ID=XXXXXXXXXXXX
 ### Другие платформы
 
 Сайт может быть развернут на любой платформе, которая поддерживает Node.js:
+
 - Heroku
 - Railway
 - DigitalOcean
@@ -262,7 +269,7 @@ MIT
 
 ## Контакты
 
-- Email: info@sanatcore.ru
-- Phone: +7 (999) 999-99-99
+- Email: sanatcoreuz@gmail.com
+- Phone: +998 90 997 48 88
 - Telegram: @sanatcore
 - Instagram: @sanatcore

@@ -1,72 +1,79 @@
+'use client';
+
 import Link from 'next/link';
 import { FiArrowRight } from 'react-icons/fi';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function AboutSection() {
+  const { t, isHydrated } = useLanguage();
+
+  if (!isHydrated) return <div className="py-20 min-h-screen"></div>;
+
   return (
     <section className="py-20 bg-white">
       <div className="container-custom">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-12">О компании</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-12">{t('about.title')}</h2>
 
           <div className="space-y-12">
             {/* Who We Are */}
             <div>
-              <h3 className="text-2xl font-bold mb-4 text-black">Кто мы</h3>
+              <h3 className="text-2xl font-bold mb-4 text-black">{t('about.whoTitle')}</h3>
               <p className="text-gray-700 text-lg leading-relaxed mb-4">
-                San&apos;atcore - это креативное агентство с упором на видеопродакшн.
+                {t('about.whoP1')}
               </p>
               <p className="text-gray-700 text-lg leading-relaxed mb-4">
-                Мы - продюсерская команда, которая создает мультимедиа контент любого формата и под любой запрос. Мы раскроем ваш бренд с любой стороны.
+                {t('about.whoP2')}
               </p>
               <p className="text-gray-700 text-lg leading-relaxed mb-4">
-                Мы любим превращать сложные задачи в простой, понятный и запоминающийся для зрителя визуальный продукт.
+                {t('about.whoP3')}
               </p>
               <p className="text-gray-700 text-lg font-semibold">
-                Мы на рынке более 12 лет
+                {t('about.marketTime')}
               </p>
             </div>
 
             {/* What We Do */}
             <div>
-              <h3 className="text-2xl font-bold mb-4 text-black">Чем занимаемся</h3>
+              <h3 className="text-2xl font-bold mb-4 text-black">{t('about.whatTitle')}</h3>
               <p className="text-gray-700 text-lg leading-relaxed mb-6">
-                San&apos;atcore работает в трёх ключевых направлениях:
+                {t('about.whatIntro')}
               </p>
               <ul className="list-disc list-inside space-y-3 text-gray-700 text-lg">
-                <li>коммерческий видеопродакшн</li>
-                <li>социальные и культурные проекты</li>
-                <li>медийные и креативные кампании</li>
+                <li>{t('about.whatList1')}</li>
+                <li>{t('about.whatList2')}</li>
+                <li>{t('about.whatList3')}</li>
               </ul>
               <p className="text-gray-700 text-lg leading-relaxed mt-6">
-                Наша задача - соединить эстетику, смысл и коммуникацию. Мы создаем проекты, которые:
+                {t('about.whatOutro')}
               </p>
               <ul className="list-disc list-inside space-y-3 text-gray-700 text-lg mt-3">
-                <li>смотрят</li>
-                <li>обсуждают</li>
-                <li>распространяют</li>
-                <li>запоминают</li>
+                <li>{t('about.whatTask1')}</li>
+                <li>{t('about.whatTask2')}</li>
+                <li>{t('about.whatTask3')}</li>
+                <li>{t('about.whatTask4')}</li>
               </ul>
             </div>
 
             {/* Our Approach */}
             <div>
-              <h3 className="text-2xl font-bold mb-4 text-black">Наш подход</h3>
+              <h3 className="text-2xl font-bold mb-4 text-black">{t('about.approachTitle')}</h3>
               <p className="text-gray-700 text-lg leading-relaxed mb-6">
-                Прежде чем создать конкретный продукт мы ищем ответ на вопрос - что это, для чего это, для каких целей, как это должно влиять на людей.
+                {t('about.approachP1')}
               </p>
               <p className="text-gray-700 text-lg leading-relaxed mb-6">
-                Мы участвуем во всем процессе:
+                {t('about.approachP2')}
               </p>
               <ul className="list-disc list-inside space-y-3 text-gray-700 text-lg">
-                <li>идея</li>
-                <li>концепция</li>
-                <li>сценарий</li>
-                <li>продакшн</li>
-                <li>постпродакшн</li>
-                <li>стратегия распространения</li>
+                <li>{t('about.approachStep1')}</li>
+                <li>{t('about.approachStep2')}</li>
+                <li>{t('about.approachStep3')}</li>
+                <li>{t('about.approachStep4')}</li>
+                <li>{t('about.approachStep5')}</li>
+                <li>{t('about.approachStep6')}</li>
               </ul>
               <p className="text-gray-700 text-lg leading-relaxed mt-6">
-                Вы получаете не ролик, а готовый коммуникационный продукт либо систему продуктов и взаимодействия с аудиторией.
+                {t('about.approachOutro')}
               </p>
             </div>
 
@@ -76,7 +83,7 @@ export default function AboutSection() {
                 href="/about"
                 className="btn-primary inline-flex items-center gap-2"
               >
-                Подробнее о компании
+                {t('about.moreAbout')}
                 <FiArrowRight />
               </Link>
             </div>

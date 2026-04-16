@@ -1,5 +1,8 @@
+'use client';
+
 import Link from 'next/link';
 import { FiArrowRight } from 'react-icons/fi';
+import { useLanguage } from '@/context/LanguageContext';
 
 interface Project {
   id: string;
@@ -10,47 +13,30 @@ interface Project {
 }
 
 export default function ProjectsSection() {
+  const { t, isHydrated, language } = useLanguage();
+
   const projects: Project[] = [
     {
-      id: '1',
-      title: 'Проект нейм 1',
-      type: 'Рекламный ролик',
-      image: 'https://via.placeholder.com/400x300?text=Project+1',
-      slug: 'project-1',
-    },
-    {
-      id: '2',
-      title: 'Проект нейм 2',
-      type: 'Контент для ТикТока',
-      image: 'https://via.placeholder.com/400x300?text=Project+2',
-      slug: 'project-2',
-    },
-    {
-      id: '3',
-      title: 'Проект нейм 3',
-      type: 'Имиджевый фильм',
-      image: 'https://via.placeholder.com/400x300?text=Project+3',
-      slug: 'project-3',
-    },
-    {
-      id: '4',
-      title: 'Проект нейм 4',
-      type: 'Документальный проект',
-      image: 'https://via.placeholder.com/400x300?text=Project+4',
-      slug: 'project-4',
-    },
+      id: 'cawep',
+      title: language === 'en' ? 'CAWEP x World Bank' : 'CAWEP x Всемирный банк',
+      type: language === 'uz' ? 'Hujjatli videorolik' : (language === 'en' ? 'Documentary video' : 'Документальный видеоролик'),
+      image: '/project.png',
+      slug: 'cawep',
+    }
   ];
+
+  if (!isHydrated) return <div className="py-20 bg-white min-h-screen"></div>;
 
   return (
     <section className="py-20 bg-white">
       <div className="container-custom">
         <div className="flex justify-between items-end mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold">Проекты</h2>
+          <h2 className="text-4xl md:text-5xl font-bold">{t('projects.title')}</h2>
           <Link
             href="/projects"
             className="btn-secondary inline-flex items-center gap-2"
           >
-            Все проекты
+            {t('projects.allProjects')}
             <FiArrowRight />
           </Link>
         </div>

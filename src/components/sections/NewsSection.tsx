@@ -1,5 +1,8 @@
+'use client';
+
 import Link from 'next/link';
 import { FiArrowRight } from 'react-icons/fi';
+import { useLanguage } from '@/context/LanguageContext';
 
 interface NewsArticle {
   id: string;
@@ -10,6 +13,8 @@ interface NewsArticle {
 }
 
 export default function NewsSection() {
+  const { t, isHydrated } = useLanguage();
+
   const news: NewsArticle[] = [
     {
       id: '1',
@@ -34,16 +39,18 @@ export default function NewsSection() {
     },
   ];
 
+  if (!isHydrated) return <div className="py-20 bg-white min-h-screen"></div>;
+
   return (
     <section className="py-20 bg-white">
       <div className="container-custom">
         <div className="flex justify-between items-end mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold">Новости и медиа</h2>
+          <h2 className="text-4xl md:text-5xl font-bold">{t('news.title')}</h2>
           <Link
             href="/news"
             className="btn-secondary inline-flex items-center gap-2"
           >
-            Все новости
+            {t('news.allNews')}
             <FiArrowRight />
           </Link>
         </div>

@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { MdClose } from 'react-icons/md';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,6 +13,7 @@ export default function Header() {
   const pathname = usePathname();
   const isHome = pathname === '/';
   const scrolled = isScrolledState || !isHome;
+  const { t, isHydrated } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,13 +24,14 @@ export default function Header() {
   }, []);
 
   const navItems = [
-    { label: 'Главная', href: '/' },
-    { label: 'О компании', href: '/about' },
-    { label: 'Услуги', href: '/services' },
-    { label: 'Проекты', href: '/projects' },
-    { label: 'Новости', href: '/news' },
-    { label: 'Контакты', href: '/contacts' },
+    { label: t('nav.home'), href: '/' },
+    { label: t('nav.about'), href: '/about' },
+    { label: t('nav.services'), href: '/services' },
+    { label: t('nav.projects'), href: '/projects' },
+    { label: t('nav.news'), href: '/news' },
+    { label: t('nav.contacts'), href: '/contacts' },
   ];
+
 
   return (
     <header
@@ -53,13 +56,11 @@ export default function Header() {
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-8">
           {navItems.map((item) => (
-            <Link
+             <Link
               key={item.href}
               href={item.href}
               className={`text-sm font-medium transition-colors duration-500 ${
-                scrolled
-                  ? 'text-gray-700 hover:text-gray-900'
-                  : 'text-white/90 hover:text-white'
+                scrolled ? 'text-gray-700 hover:text-gray-900' : 'text-white/90 hover:text-white'
               }`}
             >
               {item.label}
@@ -67,18 +68,19 @@ export default function Header() {
           ))}
         </div>
 
-        {/* CTA Buttons */}
+        {/* CTA Buttons & Language */}
         <div className="hidden md:flex items-center gap-4">
           <a
-            href="tel:+79999999999"
+            href="tel:+998909974888"
             className={`text-sm font-medium transition-colors duration-500 ${
               scrolled ? 'text-gray-700' : 'text-white/90'
             }`}
           >
-            +7 (999) 999-99-99
+            +998 90 997 48 88
           </a>
+
           <Link href="/#contact-form" className="btn-primary text-sm">
-            Оставить заявку
+            {isHydrated ? t('nav.leaveRequest') : 'Оставить заявку'}
           </Link>
         </div>
 
@@ -109,29 +111,26 @@ export default function Header() {
                 key={item.href}
                 href={item.href}
                 className={`text-sm font-medium transition-colors duration-300 ${
-                  scrolled
-                    ? 'text-gray-700 hover:text-gray-900'
-                    : 'text-white/90 hover:text-white'
+                  scrolled ? 'text-gray-700 hover:text-gray-900' : 'text-white/90 hover:text-white'
                 }`}
                 onClick={() => setIsOpen(false)}
               >
                 {item.label}
               </Link>
             ))}
+
             <a
-              href="tel:+79999999999"
-              className={`text-sm font-medium ${
-                scrolled ? 'text-gray-700' : 'text-white/90'
-              }`}
+              href="tel:+998909974888"
+              className={`text-sm font-medium ${scrolled ? 'text-gray-700' : 'text-white/90'}`}
             >
-              +7 (999) 999-99-99
+              +998 90 997 48 88
             </a>
             <Link
               href="/#contact-form"
               className="btn-primary text-sm w-full"
               onClick={() => setIsOpen(false)}
             >
-              Оставить заявку
+               {isHydrated ? t('nav.leaveRequest') : 'Оставить заявку'}
             </Link>
           </div>
         </div>
