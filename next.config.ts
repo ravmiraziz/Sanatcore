@@ -4,7 +4,7 @@ import path from 'path';
 const nextConfig = {
   outputFileTracingRoot: path.join(__dirname),
   images: {
-    domains: ['localhost', 'your-strapi-domain.com'],
+    domains: ['localhost', 'your-strapi-domain.com', 'img.youtube.com'],
     formats: ['image/avif', 'image/webp'],
   },
   headers: async () => {
