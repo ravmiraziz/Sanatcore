@@ -222,7 +222,8 @@ export const dictionaries = {
         'брендами с идеей'
       ],
       collabP2: 'давайте обсудим.',
-      collabP3: 'San\'atcore — визуальный язык, который работает со смыслом.'
+      collabP3: 'San\'atcore — визуальный язык, который работает со смыслом.',
+      viewPost: 'Посмотреть публикацию'
     },
     newsPage: {
       backToNews: '← Назад к новостям',
@@ -450,7 +451,8 @@ export const dictionaries = {
         'g\'oyaga ega brendlar'
       ],
       collabP2: 'Keling, muhokama qilamiz.',
-      collabP3: 'San\'atcore — mazmun bilan ishlaydigan vizual til.'
+      collabP3: 'San\'atcore — mazmun bilan ishlaydigan vizual til.',
+      viewPost: 'Nashrni ko\'rish'
     },
     newsPage: {
       backToNews: '← Yangiliklarga qaytish',
@@ -679,7 +681,8 @@ export const dictionaries = {
         'documentary or impact-driven content'
       ],
       collabP2: 'We are ready to collaborate.',
-      collabP3: 'San\'atcore — shaping perception through visual storytelling.'
+      collabP3: 'San\'atcore — shaping perception through visual storytelling.',
+      viewPost: 'View publication'
     },
     newsPage: {
       backToNews: '← Back to news',

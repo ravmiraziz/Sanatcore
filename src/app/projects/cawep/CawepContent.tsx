@@ -136,6 +136,16 @@ export default function CawepContent() {
                 <li key={i}>{item}</li>
               ))}
             </ul>
+            <div className="mt-8">
+              <a
+                href="https://www.facebook.com/share/p/1B36x97KQx/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-black font-bold border-b-2 border-black hover:opacity-70 transition-opacity"
+              >
+                {t('cawep.viewPost')}
+              </a>
+            </div>
           </div>
 
           {/* Impact */}
