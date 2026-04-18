@@ -10,73 +10,100 @@ export default function ContactsContent() {
 
   const getTitle = () => {
     switch (language) {
-      case 'uz': return 'Aloqa';
-      case 'en': return 'Contacts';
-      default: return 'Контакты';
+      case 'uz':
+        return 'Aloqa';
+      case 'en':
+        return 'Contacts';
+      default:
+        return 'Контакты';
     }
   };
 
   const getContactUs = () => {
     switch (language) {
-      case 'uz': return 'Biz bilan bog\'lanish';
-      case 'en': return 'Contact us';
-      default: return 'Свяжитесь с нами';
+      case 'uz':
+        return "Biz bilan bog'lanish";
+      case 'en':
+        return 'Contact us';
+      default:
+        return 'Свяжитесь с нами';
     }
   };
 
   const getPhone = () => {
     switch (language) {
-      case 'uz': return 'Telefon';
-      case 'en': return 'Phone';
-      default: return 'Телефон';
+      case 'uz':
+        return 'Telefon';
+      case 'en':
+        return 'Phone';
+      default:
+        return 'Телефон';
     }
   };
 
   const getAddressTitle = () => {
     switch (language) {
-      case 'uz': return 'Manzil';
-      case 'en': return 'Address';
-      default: return 'Адрес';
+      case 'uz':
+        return 'Manzil';
+      case 'en':
+        return 'Address';
+      default:
+        return 'Адрес';
     }
   };
 
   const getAddress = () => {
     switch (language) {
-      case 'uz': return 'Sankt-Peterburg, Rossiya';
-      case 'en': return 'St. Petersburg, Russia';
-      default: return 'Санкт-Петербург, Россия';
+      case 'uz':
+        return 'Sankt-Peterburg, Rossiya';
+      case 'en':
+        return 'St. Petersburg, Russia';
+      default:
+        return 'Санкт-Петербург, Россия';
     }
   };
 
   const getSocialMedia = () => {
     switch (language) {
-      case 'uz': return 'Ijtimoiy tarmoqlar';
-      case 'en': return 'Social Media';
-      default: return 'Социальные сети';
+      case 'uz':
+        return 'Ijtimoiy tarmoqlar';
+      case 'en':
+        return 'Social Media';
+      default:
+        return 'Социальные сети';
     }
   };
 
   const getOrWriteUs = () => {
     switch (language) {
-      case 'uz': return 'Yoki bizga yozing';
-      case 'en': return 'Or write to us';
-      default: return 'Или напишите нам';
+      case 'uz':
+        return 'Yoki bizga yozing';
+      case 'en':
+        return 'Or write to us';
+      default:
+        return 'Или напишите нам';
     }
   };
 
   const getFormDesc = () => {
     switch (language) {
-      case 'uz': return 'Quyidagi shaklni to\'ldiring va biz siz bilan tez orada bog\'lanamiz.';
-      case 'en': return 'Fill out the form below and we will contact you as soon as possible.';
-      default: return 'Заполните форму ниже и мы свяжемся с вами как можно скорее.';
+      case 'uz':
+        return "Quyidagi shaklni to'ldiring va biz siz bilan tez orada bog'lanamiz.";
+      case 'en':
+        return 'Fill out the form below and we will contact you as soon as possible.';
+      default:
+        return 'Заполните форму ниже и мы свяжемся с вами как можно скорее.';
     }
   };
 
   const getOpenFormBtn = () => {
     switch (language) {
-      case 'uz': return 'Ariza shaklini ochish';
-      case 'en': return 'Open request form';
-      default: return 'Открыть форму заявки';
+      case 'uz':
+        return 'Ariza shaklini ochish';
+      case 'en':
+        return 'Open request form';
+      default:
+        return 'Открыть форму заявки';
     }
   };
 
@@ -128,7 +155,7 @@ export default function ContactsContent() {
                   <h3 className="text-lg font-semibold">Telegram</h3>
                 </div>
                 <a
-                  href="https://t.me/sanatcore"
+                  href="https://t.me/nsanatcore"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-700 hover:text-black transition-colors text-lg"
@@ -148,7 +175,7 @@ export default function ContactsContent() {
                 <h3 className="text-lg font-semibold mb-4">{getSocialMedia()}</h3>
                 <div className="flex gap-4">
                   <a
-                    href="https://instagram.com"
+                    href="https://www.instagram.com/sanatcore/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-600 hover:text-black transition-colors font-semibold"
@@ -156,7 +183,7 @@ export default function ContactsContent() {
                     Instagram
                   </a>
                   <a
-                    href="https://youtube.com"
+                    href="https://www.youtube.com/@sanatcore"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-600 hover:text-black transition-colors font-semibold"
@@ -164,7 +191,7 @@ export default function ContactsContent() {
                     YouTube
                   </a>
                   <a
-                    href="https://linkedin.com"
+                    href="https://www.linkedin.com/company/sanatcore/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-600 hover:text-black transition-colors font-semibold"
@@ -180,9 +207,7 @@ export default function ContactsContent() {
           <div>
             <h2 className="text-2xl font-bold mb-8">{getOrWriteUs()}</h2>
             <div className="bg-gray-50 p-8 rounded-lg">
-              <p className="text-gray-600 mb-6">
-                {getFormDesc()}
-              </p>
+              <p className="text-gray-600 mb-6">{getFormDesc()}</p>
               <Link href="/#contact-form" className="btn-primary w-full">
                 {getOpenFormBtn()}
               </Link>
