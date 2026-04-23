@@ -46,10 +46,7 @@ export default function NewsSection() {
       <div className="container-custom">
         <div className="flex justify-between items-end mb-16">
           <h2 className="text-4xl md:text-5xl font-bold">{t('news.title')}</h2>
-          <Link
-            href="/news"
-            className="btn-secondary inline-flex items-center gap-2"
-          >
+          <Link href="/news" className="btn-secondary inline-flex items-center gap-2">
             {t('news.allNews')}
             <FiArrowRight />
           </Link>
@@ -57,18 +54,7 @@ export default function NewsSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {news.map((article) => (
-            <Link
-              key={article.id}
-              href={`/news/${article.slug}`}
-              className="group cursor-pointer"
-            >
-              <div className="relative overflow-hidden rounded-lg mb-4">
-                <img
-                  src={article.image}
-                  alt={article.title}
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-              </div>
+            <Link key={article.id} href={`/news/${article.slug}`} className="group cursor-pointer">
               <p className="text-sm text-gray-500 mb-2">{article.date}</p>
               <h3 className="text-lg font-semibold text-black group-hover:text-gray-700 transition-colors">
                 {article.title}
