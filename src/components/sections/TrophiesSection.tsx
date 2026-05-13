@@ -1,13 +1,31 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
-import { FiAward, FiDownload } from 'react-icons/fi';
+import { FiArrowRight } from 'react-icons/fi';
+
+const certificates = [
+  {
+    id: 'ethos-2026',
+    image: '/sertifikat1.jpg',
+    title: 'Ethos Film Awards 2026',
+    subtitle: 'Audience Choice — Best Short',
+    bgColor: 'bg-[#f5f0e8]',
+  },
+  {
+    id: 'cawep-worldbank',
+    image: '/sertifikat.PNG',
+    titleKey: 'trophies.cawepCategory',
+    subtitle: 'CAWEP — World Bank Group',
+    bgColor: 'bg-[#e8eef5]',
+  },
+];
 
 export default function TrophiesSection() {
   const { t, isHydrated } = useLanguage();
 
-  if (!isHydrated) return <div className="py-20 min-h-[60vh]"></div>;
+  if (!isHydrated) return <div className="py-20 min-h-[40vh]"></div>;
 
   return (
     <section
@@ -25,49 +43,49 @@ export default function TrophiesSection() {
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">{t('trophies.subtitle')}</p>
         </div>
 
-        {/* Trophy Card */}
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden hover:border-yellow-500/30 transition-all duration-500 group">
-            {/* Certificate Image */}
-            <div className="relative overflow-hidden">
-              <div className="aspect-[16/11] relative">
-                <Image
-                  src="/sertifikat1.jpg"
-                  alt="Ethos Film Awards 2026 — Audience Choice, Best Short — CAWEP"
-                  fill
-                  className="object-contain bg-[#f5f0e8] p-4 group-hover:scale-[1.02] transition-transform duration-700 ease-out"
-                  sizes="(max-width: 768px) 100vw, 800px"
-                  priority
-                />
-              </div>
-              {/* Glowing border on hover */}
-              <div className="absolute inset-0 border-2 border-transparent group-hover:border-yellow-500/20 rounded-t-2xl transition-all duration-500 pointer-events-none" />
-            </div>
-
-            {/* Info */}
-            <div className="p-6 md:p-8">
-              <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                <div>
-                  <h3 className="text-xl md:text-2xl font-bold text-white mb-2">
-                    {t('trophies.awardTitle')}
-                  </h3>
-                  <p className="text-yellow-400 font-medium text-sm md:text-base mb-1">
-                    {t('trophies.category')}
-                  </p>
-                  <p className="text-gray-400 text-sm">{t('trophies.details')}</p>
+        {/* Certificates Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+          {certificates.map((cert) => (
+            <Link
+              key={cert.id}
+              href="/trophies"
+              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden hover:border-yellow-500/30 transition-all duration-500 group block"
+            >
+              {/* Certificate Image */}
+              <div className={`relative overflow-hidden ${cert.bgColor}`}>
+                <div className="aspect-[16/11] relative">
+                  <Image
+                    src={cert.image}
+                    alt={cert.title || ''}
+                    fill
+                    className="object-contain p-4 group-hover:scale-[1.02] transition-transform duration-700 ease-out"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
                 </div>
-                <a
-                  href="/sertifikat1.jpg"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-3 bg-yellow-500/10 hover:bg-yellow-500/20 border border-yellow-500/30 text-yellow-400 rounded-xl font-medium text-sm transition-all duration-300 whitespace-nowrap"
-                >
-                  <FiDownload className="w-4 h-4" />
-                  {t('trophies.download')}
-                </a>
               </div>
-            </div>
-          </div>
+
+              {/* Info */}
+              <div className="p-5 md:p-6">
+                <h3 className="text-lg md:text-xl font-bold text-white mb-1">
+                  {cert.title || (cert.titleKey ? t(cert.titleKey) : '')}
+                </h3>
+                <p className="text-yellow-400 font-medium text-sm">
+                  {cert.subtitle}
+                </p>
+              </div>
+            </Link>
+          ))}
+        </div>
+
+        {/* View All Link */}
+        <div className="text-center mt-10">
+          <Link
+            href="/trophies"
+            className="inline-flex items-center gap-2 text-white/80 hover:text-yellow-400 font-medium transition-colors duration-300"
+          >
+            {t('trophies.viewAll')}
+            <FiArrowRight className="w-4 h-4" />
+          </Link>
         </div>
       </div>
     </section>

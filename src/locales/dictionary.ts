@@ -109,7 +109,11 @@ export const dictionaries = {
       recipientLabel: 'Получатель:',
       dateLabel: 'Дата:',
       locationLabel: 'Место:',
-      viewProject: 'Смотреть проект'
+      viewProject: 'Смотреть проект',
+      cawepCategory: 'Победитель регионального конкурса водно-энергетической программы для Центральной Азии',
+      cawepLocation: 'Алматы, Казахстан',
+      cawepDirector: 'Дмитрий Петрин',
+      viewAll: 'Все награды'
     },
     contact: {
       title: 'Оставить заявку',
@@ -354,7 +358,11 @@ export const dictionaries = {
       recipientLabel: 'Qabul qiluvchi:',
       dateLabel: 'Sana:',
       locationLabel: 'Joy:',
-      viewProject: 'Loyihani ko\'rish'
+      viewProject: 'Loyihani ko\'rish',
+      cawepCategory: 'Markaziy Osiyo uchun suv-energetika dasturi mintaqaviy tanlov g\'olibi',
+      cawepLocation: 'Almati, Qozog\'iston',
+      cawepDirector: 'Dmitriy Petrin',
+      viewAll: 'Barcha mukofotlar'
     },
     contact: {
       title: 'Ariza qoldirish',
@@ -599,7 +607,11 @@ export const dictionaries = {
       recipientLabel: 'Recipient:',
       dateLabel: 'Date:',
       locationLabel: 'Location:',
-      viewProject: 'View Project'
+      viewProject: 'View Project',
+      cawepCategory: 'Winner of the Regional Water-Energy Program Contest for Central Asia',
+      cawepLocation: 'Almaty, Kazakhstan',
+      cawepDirector: 'Dmitry Petrin',
+      viewAll: 'All Trophies'
     },
     contact: {
       title: 'Leave a Request',

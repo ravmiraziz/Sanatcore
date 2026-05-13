@@ -18,6 +18,21 @@ const trophies = [
     director: 'Anabelle D. Munro',
     downloadUrl: '/sertifikat1.jpg',
     projectLink: '/projects/cawep',
+    bgColor: 'bg-[#f5f0e8]',
+  },
+  {
+    id: 'cawep-worldbank',
+    image: '/sertifikat.PNG',
+    festival: 'CAWEP — World Bank Group',
+    category: 'trophies.cawepCategory',
+    project: 'CAWEP',
+    recipient: 'San\'atcore',
+    location: 'trophies.cawepLocation',
+    date: '2025',
+    director: 'trophies.cawepDirector',
+    downloadUrl: '/sertifikat.PNG',
+    projectLink: '/projects/cawep',
+    bgColor: 'bg-[#e8eef5]',
   },
 ];
 
@@ -44,7 +59,7 @@ export default function TrophiesContent() {
             >
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
                 {/* Certificate Image */}
-                <div className="relative overflow-hidden bg-[#f5f0e8]">
+                <div className={`relative overflow-hidden ${trophy.bgColor}`}>
                   <div className="aspect-[16/11] lg:aspect-auto lg:h-full relative">
                     <Image
                       src={trophy.image}
@@ -66,7 +81,9 @@ export default function TrophiesContent() {
 
                   <h2 className="text-3xl font-bold text-black mb-3">{trophy.festival}</h2>
 
-                  <p className="text-yellow-600 font-semibold text-lg mb-6">{trophy.category}</p>
+                  <p className="text-yellow-600 font-semibold text-lg mb-6">
+                    {trophy.category.startsWith('trophies.') ? t(trophy.category) : trophy.category}
+                  </p>
 
                   {/* Details Grid */}
                   <div className="space-y-4 mb-8">
@@ -92,7 +109,9 @@ export default function TrophiesContent() {
                       <span className="text-gray-400 text-sm min-w-[100px]">
                         {t('trophies.locationLabel')}
                       </span>
-                      <span className="text-black font-medium">{trophy.location}</span>
+                      <span className="text-black font-medium">
+                        {trophy.location.startsWith('trophies.') ? t(trophy.location) : trophy.location}
+                      </span>
                     </div>
                   </div>
 
