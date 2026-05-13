@@ -76,7 +76,7 @@ export default function HeroSection() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <Link href="/projects" className="btn-primary">
+            <Link href="/services" className="btn-primary">
               {isHydrated ? t('hero.viewProjects') : 'Услуги'}
               <FiArrowRight />
             </Link>
