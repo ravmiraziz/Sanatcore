@@ -28,6 +28,7 @@ export default function Header() {
     { label: t('nav.about'), href: '/about' },
     { label: t('nav.services'), href: '/services' },
     { label: t('nav.projects'), href: '/projects' },
+    { label: t('nav.trophies'), href: '/trophies' },
     { label: t('nav.news'), href: '/news' },
     { label: t('nav.contacts'), href: '/contacts' },
   ];

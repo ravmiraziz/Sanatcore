@@ -7,6 +7,7 @@ export const dictionaries = {
       about: 'О компании',
       services: 'Услуги',
       projects: 'Проекты',
+      trophies: 'Трофеи',
       news: 'Новости',
       contacts: 'Контакты',
       leaveRequest: 'Оставить заявку'
@@ -102,7 +103,13 @@ export const dictionaries = {
       awardTitle: 'Ethos Film Awards 2026',
       category: 'Audience Choice — Best Short',
       details: 'Проект CAWEP • Нуруллох Нигманов • Санта-Моника, Калифорния',
-      download: 'Скачать сертификат'
+      download: 'Скачать сертификат',
+      winner: 'Победитель',
+      projectLabel: 'Проект:',
+      recipientLabel: 'Получатель:',
+      dateLabel: 'Дата:',
+      locationLabel: 'Место:',
+      viewProject: 'Смотреть проект'
     },
     contact: {
       title: 'Оставить заявку',
@@ -245,6 +252,7 @@ export const dictionaries = {
       about: 'Kompaniya haqida',
       services: 'Xizmatlar',
       projects: 'Loyihalar',
+      trophies: 'Trofeylar',
       news: 'Yangiliklar',
       contacts: 'Aloqa',
       leaveRequest: 'Ariza qoldirish'
@@ -340,7 +348,13 @@ export const dictionaries = {
       awardTitle: 'Ethos Film Awards 2026',
       category: 'Audience Choice — Best Short',
       details: 'CAWEP loyihasi • Nurulloh Nigmanov • Santa-Monika, Kaliforniya',
-      download: 'Sertifikatni yuklab olish'
+      download: 'Sertifikatni yuklab olish',
+      winner: 'G\'olib',
+      projectLabel: 'Loyiha:',
+      recipientLabel: 'Qabul qiluvchi:',
+      dateLabel: 'Sana:',
+      locationLabel: 'Joy:',
+      viewProject: 'Loyihani ko\'rish'
     },
     contact: {
       title: 'Ariza qoldirish',
@@ -483,6 +497,7 @@ export const dictionaries = {
       about: 'About',
       services: 'Services',
       projects: 'Projects',
+      trophies: 'Trophies',
       news: 'News',
       contacts: 'Contacts',
       leaveRequest: 'Leave a Request'
@@ -578,7 +593,13 @@ export const dictionaries = {
       awardTitle: 'Ethos Film Awards 2026',
       category: 'Audience Choice — Best Short',
       details: 'CAWEP Project • Nurullokh Nigmanov • Santa Monica, CA',
-      download: 'Download Certificate'
+      download: 'Download Certificate',
+      winner: 'Winner',
+      projectLabel: 'Project:',
+      recipientLabel: 'Recipient:',
+      dateLabel: 'Date:',
+      locationLabel: 'Location:',
+      viewProject: 'View Project'
     },
     contact: {
       title: 'Leave a Request',
