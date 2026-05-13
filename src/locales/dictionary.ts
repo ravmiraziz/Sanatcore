@@ -20,7 +20,7 @@ export const dictionaries = {
     hero: {
       subtitle: 'Креативное агентство с упором на видеопродакшн.',
       description: 'Мы создаем визуальные истории, которые формируют восприятие брендов, людей и идей.',
-      viewProjects: 'Посмотреть проекты',
+      viewProjects: 'Услуги',
       mute: 'Выключить звук',
       unmute: 'Включить звук'
     },
@@ -94,6 +94,15 @@ export const dictionaries = {
     news: {
       title: 'Новости и медиа',
       allNews: 'Все новости',
+    },
+    trophies: {
+      badge: 'Награды и признание',
+      title: 'Трофеи',
+      subtitle: 'Наши работы получают признание на международных кинофестивалях и конкурсах.',
+      awardTitle: 'Ethos Film Awards 2026',
+      category: 'Audience Choice — Best Short',
+      details: 'Проект CAWEP • Нуруллох Нигманов • Санта-Моника, Калифорния',
+      download: 'Скачать сертификат'
     },
     contact: {
       title: 'Оставить заявку',
@@ -249,7 +258,7 @@ export const dictionaries = {
     hero: {
       subtitle: 'Asosan video prodyuserlikka yo\'naltirilgan kreativ agentlik.',
       description: 'Biz brendlar, insonlar va g\'oyalarni shakllantiruvchi vizual hikoyalar yaratamiz.',
-      viewProjects: 'Loyihalarni ko\'rish',
+      viewProjects: 'Xizmatlar',
       mute: 'Ovozni o\'chirish',
       unmute: 'Ovozni yoqish'
     },
@@ -323,6 +332,15 @@ export const dictionaries = {
     news: {
       title: 'Yangiliklar va media',
       allNews: 'Barcha yangiliklar',
+    },
+    trophies: {
+      badge: 'Mukofotlar va e\'tirof',
+      title: 'Trofeylar',
+      subtitle: 'Bizning ishlarimiz xalqaro kinofestivallar va tanlovlarda e\'tirof etilmoqda.',
+      awardTitle: 'Ethos Film Awards 2026',
+      category: 'Audience Choice — Best Short',
+      details: 'CAWEP loyihasi • Nurulloh Nigmanov • Santa-Monika, Kaliforniya',
+      download: 'Sertifikatni yuklab olish'
     },
     contact: {
       title: 'Ariza qoldirish',
@@ -478,7 +496,7 @@ export const dictionaries = {
     hero: {
       subtitle: 'Creative agency focused on video production.',
       description: 'We create visual stories that shape the perception of brands, people, and ideas.',
-      viewProjects: 'View Projects',
+      viewProjects: 'Services',
       mute: 'Mute',
       unmute: 'Unmute'
     },
@@ -552,6 +570,15 @@ export const dictionaries = {
     news: {
       title: 'News & Media',
       allNews: 'All News',
+    },
+    trophies: {
+      badge: 'Awards & Recognition',
+      title: 'Trophies',
+      subtitle: 'Our work is recognized at international film festivals and competitions.',
+      awardTitle: 'Ethos Film Awards 2026',
+      category: 'Audience Choice — Best Short',
+      details: 'CAWEP Project • Nurullokh Nigmanov • Santa Monica, CA',
+      download: 'Download Certificate'
     },
     contact: {
       title: 'Leave a Request',

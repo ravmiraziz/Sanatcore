@@ -3,43 +3,16 @@
 import Link from 'next/link';
 import { FiArrowRight } from 'react-icons/fi';
 import { useLanguage } from '@/context/LanguageContext';
-
-interface NewsArticle {
-  id: string;
-  title: string;
-  date: string;
-  image: string;
-  slug: string;
-}
+import { newsData } from '@/lib/data';
 
 export default function NewsSection() {
-  const { t, isHydrated } = useLanguage();
-
-  const news: NewsArticle[] = [
-    {
-      id: '1',
-      title: 'Статья первая',
-      date: '17 марта 2024',
-      image: 'https://via.placeholder.com/400x250?text=News+1',
-      slug: 'news-1',
-    },
-    {
-      id: '2',
-      title: 'Статья вторая',
-      date: '15 марта 2024',
-      image: 'https://via.placeholder.com/400x250?text=News+2',
-      slug: 'news-2',
-    },
-    {
-      id: '3',
-      title: 'Статья третья',
-      date: '10 марта 2024',
-      image: 'https://via.placeholder.com/400x250?text=News+3',
-      slug: 'news-3',
-    },
-  ];
+  const { t, isHydrated, language } = useLanguage();
 
   if (!isHydrated) return <div className="py-20 bg-white min-h-screen"></div>;
+
+  const langKey = (language as 'ru' | 'uz' | 'en') || 'ru';
+  // Show up to 3 news articles on the homepage
+  const news = (newsData[langKey] || newsData.ru).slice(0, 3);
 
   return (
     <section className="py-20 bg-white">

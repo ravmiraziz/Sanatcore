@@ -38,7 +38,15 @@ export default function HeroSection() {
       {/* Mute / Unmute Button — top-left */}
       <button
         onClick={toggleMute}
-        aria-label={isMuted ? (isHydrated ? t('hero.unmute') : 'Включить звук') : (isHydrated ? t('hero.mute') : 'Выключить звук')}
+        aria-label={
+          isMuted
+            ? isHydrated
+              ? t('hero.unmute')
+              : 'Включить звук'
+            : isHydrated
+              ? t('hero.mute')
+              : 'Выключить звук'
+        }
         className="
           absolute bottom-4 left-4 z-30
           flex items-center gap-2
@@ -51,32 +59,25 @@ export default function HeroSection() {
           sm:bottom-6 sm:left-6
         "
       >
-        {isMuted ? (
-          <HiVolumeOff className="w-5 h-5" />
-        ) : (
-          <HiVolumeUp className="w-5 h-5" />
-        )}
+        {isMuted ? <HiVolumeOff className="w-5 h-5" /> : <HiVolumeUp className="w-5 h-5" />}
       </button>
 
       {/* Content */}
       <div className="container-custom relative z-20 py-20">
         <div className="max-w-3xl animate-fade-in">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-            SAN&apos;ATCORE
-          </h1>
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">SAN&apos;ATCORE</h1>
           <p className="text-xl md:text-2xl text-white/90 mb-8">
             {isHydrated ? t('hero.subtitle') : 'Креативное агентство с упором на видеопродакшн.'}
           </p>
           <p className="text-lg text-white/70 mb-12 leading-relaxed">
-            {isHydrated ? t('hero.description') : 'Мы создаем визуальные истории, которые формируют восприятие брендов, людей и идей.'}
+            {isHydrated
+              ? t('hero.description')
+              : 'Мы создаем визуальные истории, которые формируют восприятие брендов, людей и идей.'}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <Link
-              href="/projects"
-              className="btn-primary"
-            >
-              {isHydrated ? t('hero.viewProjects') : 'Посмотреть проекты'}
+            <Link href="/projects" className="btn-primary">
+              {isHydrated ? t('hero.viewProjects') : 'Услуги'}
               <FiArrowRight />
             </Link>
             <Link
