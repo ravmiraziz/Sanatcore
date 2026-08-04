@@ -17,7 +17,7 @@ const certificates = [
     id: 'cawep-worldbank',
     image: '/sertifikat.PNG',
     titleKey: 'trophies.cawepCategory',
-    subtitle: 'CAWEP — World Bank Group',
+    subtitle: 'RES 2026',
     bgColor: 'bg-[#e8eef5]',
   },
 ];
@@ -69,9 +69,7 @@ export default function TrophiesSection() {
                 <h3 className="text-lg md:text-xl font-bold text-white mb-1">
                   {cert.title || (cert.titleKey ? t(cert.titleKey) : '')}
                 </h3>
-                <p className="text-yellow-400 font-medium text-sm">
-                  {cert.subtitle}
-                </p>
+                <p className="text-yellow-400 font-medium text-sm">{cert.subtitle}</p>
               </div>
             </Link>
           ))}
