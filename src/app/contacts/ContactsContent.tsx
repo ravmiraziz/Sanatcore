@@ -55,11 +55,11 @@ export default function ContactsContent() {
   const getAddress = () => {
     switch (language) {
       case 'uz':
-        return 'Sankt-Peterburg, Rossiya';
+        return '1-y proezd Muxtor Ashrafi, 67A';
       case 'en':
-        return 'St. Petersburg, Russia';
+        return '1-y street Muhtor Ashrafiy, 67A';
       default:
-        return 'Санкт-Петербург, Россия';
+        return '1-й проезд Мухтара Ашрафи, 67А';
     }
   };
 
